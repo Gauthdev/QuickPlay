@@ -1,0 +1,46 @@
+bookmarklets/ad-skipper.js
+
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .bookmarklet-btn {
+      display: inline-block;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #3399ff;
+      background-color: #05111a;
+      border: 2px solid #3399ff;
+      border-radius: 8px;
+      text-decoration: none;
+      cursor: move;
+      font-family: 'Courier New', monospace;
+      box-shadow: 0 4px 6px rgba(51,153,255,0.1);
+      transition: all 0.2s ease;
+    }
+    .bookmarklet-btn:hover {
+      background-color: #3399ff;
+      color: #05111a;
+      box-shadow: 0 6px 12px rgba(51,153,255,0.3);
+      transform: translateY(-2px);
+    }
+    .hint {
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+      color: #888888;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- The draggable link containing your Ad Skipper code -->
+  <a class="bookmarklet-btn" href="javascript:(function(){const videos=document.querySelectorAll('video');if(videos.length>0){videos.forEach(video=>{if(!isNaN(video.duration)&&video.duration>0){video.currentTime=video.duration;video.play();}});console.log('Skipped!');}else{console.log('No active video element found.');}})();">
+    ⏭️Ad Skipper
+  </a>
+
+  <div class="hint">Drag this button into your Bookmarks Bar</div>
+
+</body>
+</html>
